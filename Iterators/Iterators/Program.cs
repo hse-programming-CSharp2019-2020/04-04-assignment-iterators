@@ -2,7 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 
-namespace Iterators
+namespace Task01
 {
     class IteratorSample : IEnumerable<string>
     {
