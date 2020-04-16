@@ -2,9 +2,10 @@
 using System.Collections;
 
 /* На вход подается число N.
- * Нужно создать коллекцию из N квадратов последовательного ряда натуральных чисел 
- * и вывести ее на экран дважды. Элементы коллекции разделять пробелом. 
- * Выводы всей коллекции разделять переходом на новую строку.
+ * Нужно создать коллекцию из N кубов последовательного ряда натуральных чисел 
+ * и вывести ее на экран ТРИЖДЫ. Инвертировать порядок элементов при каждом последующем выводе.
+ * Элементы коллекции разделять пробелом. 
+ * Очередной вывод коллекции разделять переходом на новую строку.
  * Не хранить всю коллекцию в памяти.
  * 
  * Код, данный в условии, НЕЛЬЗЯ стирать, его можно только дополнять.
@@ -14,12 +15,13 @@ using System.Collections;
  * 3
  * 
  * Пример выходных данных:
- * 1 4 9
- * 1 4 9
+ * 1 8 27
+ * 27 8 1
+ * 1 8 27
  * 
  * В случае ввода некорректных данных выбрасывайте ArgumentException.
 */
-namespace Task04
+namespace Task05
 {
     class Program
     {
@@ -27,10 +29,12 @@ namespace Task04
         {
             try
             {
-                int value = // int.Parse(Console.ReadLine());
+                int value =  //int.Parse(Console.ReadLine());
                 MyInts myInts = new MyInts();
                 IEnumerator enumerator = myInts.MyEnumerator(value);
 
+                IterateThroughEnumeratorWithoutUsingForeach(enumerator);
+                Console.WriteLine();
                 IterateThroughEnumeratorWithoutUsingForeach(enumerator);
                 Console.WriteLine();
                 IterateThroughEnumeratorWithoutUsingForeach(enumerator);
@@ -56,34 +60,43 @@ namespace Task04
     {
         //int index = 0;
         //int N;
-        
+        //bool increasedOrder = true;
+
         //public IEnumerator MyEnumerator(int N)
         //{
-            //this.N = N;
-            //return this;
+        //    this.N = N;
+        //    return this;
         //}
-        
+
         public bool MoveNext()
         {
-            //if (index == N)
+            //if (increasedOrder && index == N || (!increasedOrder) && index == 1)
             //{
             //    Reset();
+            //    increasedOrder = !increasedOrder;
             //    return false;
             //}
 
-            //index++;
+            //if (increasedOrder)
+            //    index++;
+            //else
+            //    index--;
+
             //return true;
         }
 
         //public void Reset()
         //{
-        //    index = 0;
+        //    if (increasedOrder)
+        //        index = N + 1;
+        //    else
+        //        index = 0;
         //}
 
         public object Current
         {
             //get {
-            //    return index * index;
+            //    return index * index * index;
             //}
         }
     }
