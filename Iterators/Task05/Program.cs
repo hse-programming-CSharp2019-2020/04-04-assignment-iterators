@@ -2,7 +2,7 @@
 using System.Collections;
 
 /* На вход подается число N.
- * Нужно создать коллекцию из N кубов последовательного ряда натуральных чисел 
+ * Нужно создать коллекцию из N элементов последовательного ряда натуральных чисел, возведенных в 10 степень, 
  * и вывести ее на экран ТРИЖДЫ. Инвертировать порядок элементов при каждом последующем выводе.
  * Элементы коллекции разделять пробелом. 
  * Очередной вывод коллекции разделять переходом на новую строку.
@@ -12,14 +12,15 @@ using System.Collections;
  * Не использовать yield и foreach. Не вызывать метод Reset() в классе Program.
  * 
  * Пример входных данных:
- * 3
+ * 2
  * 
  * Пример выходных данных:
- * 1 8 27
- * 27 8 1
- * 1 8 27
+ * 1 1024
+ * 1024 1
+ * 1 1024
  * 
  * В случае ввода некорректных данных выбрасывайте ArgumentException.
+ * В других ситуациях выбрасывайте 
 */
 namespace Task05
 {
@@ -29,9 +30,9 @@ namespace Task05
         {
             try
             {
-                int value =  //int.Parse(Console.ReadLine());
-                MyInts myInts = new MyInts();
-                IEnumerator enumerator = myInts.MyEnumerator(value);
+                //long value =  long.Parse(Console.ReadLine());
+                MyDigits myDigits = new MyDigits();
+                IEnumerator enumerator = myDigits.MyEnumerator(value);
 
                 IterateThroughEnumeratorWithoutUsingForeach(enumerator);
                 Console.WriteLine();
@@ -42,6 +43,10 @@ namespace Task05
             catch (ArgumentException)
             {
                 Console.WriteLine("error");
+            }
+            catch (ArithmeticException)
+            {
+                Console.WriteLine("ooops");
             }
 
             //Console.ReadKey();
@@ -56,7 +61,7 @@ namespace Task05
         }
     }
 
-    class MyInts : IEnumerator // НЕ МЕНЯТЬ ЭТУ СТРОКУ
+    class MyDigits : IEnumerator // НЕ МЕНЯТЬ ЭТУ СТРОКУ
     {
         //int index = 0;
         //int N;
@@ -93,11 +98,11 @@ namespace Task05
         //        index = 0;
         //}
 
-        public object Current
-        {
+        //public object Current
+        //{
             //get {
-            //    return index * index * index;
+            //    return (long)Math.Pow(index, 10);
             //}
-        }
+        //}
     }
 }
