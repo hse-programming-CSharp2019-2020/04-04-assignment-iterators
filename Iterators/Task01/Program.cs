@@ -24,7 +24,7 @@ namespace Task01
         {
             try
             {
-                int value = // int.Parse(Console.ReadLine());
+                int value = 
                 foreach (int el in Fibonacci(value))
                 {
                     Console.Write(el + " ");
@@ -34,25 +34,11 @@ namespace Task01
             {
                 Console.Write("error");
             }
-            //Console.ReadKey();
         }
 
         public static IEnumerable<int> Fibonacci(int maxValue)
         {
-            //yield return 1;
-            //yield return 1;
-
-            //var last = 1;
-            //var beforeLast = 1;
-
-            //while (last + beforeLast <= maxValue)
-            //{
-            //    var current = last + beforeLast;
-            //    beforeLast = last;
-            //    last = current;
-
-            //    yield return current;
-            //}
+           
         }
     }
 }

@@ -39,17 +39,6 @@ namespace Task02
             this.start = start;
         }
 
-        //public IEnumerator<string> GetEnumerator()
-        //{
-        //    for (int index = 0; index < values.Length; index++)
-        //        yield return values[(index - 1 + start) % values.Length];
-        //}
-
-        //IEnumerator IEnumerable.GetEnumerator()
-        //{
-        //    throw new NotImplementedException();
-        //}
-
     }
 
     class Program
@@ -58,8 +47,8 @@ namespace Task02
         {
             try
             {
-                int startingIndex = //int.Parse(Console.ReadLine());
-                string[] values = //Console.ReadLine().Trim().Split();
+                int startingIndex = 
+                string[] values = 
 
                 foreach (string ob in new IteratorSample(values, startingIndex))
                     Console.Write(ob + " ");
