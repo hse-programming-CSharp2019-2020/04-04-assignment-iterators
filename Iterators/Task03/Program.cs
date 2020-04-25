@@ -14,9 +14,9 @@ using System.Collections;
  * 
  * Пример входных данных:
  * 3
- * Bill Banana Bananovich
- * Alex Apple Applovich
- * Clark Carrot Carratovich
+ * Banana Bill Bananovich
+ * Apple Alex Applovich
+ * Carrot Clark Carrotovich
  * 
  * Пример выходных данных:
  * Apple A.
